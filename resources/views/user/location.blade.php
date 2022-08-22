@@ -14,7 +14,7 @@
             let lat = position.coords.latitude//"-7.396149";
             let long = position.coords.longitude//"109.695122";
 
-            let data = {!!json_encode($data, JSON_NUMERIC_CHECK) !!}
+            var data = <?php echo json_encode($data); ?>;
             if(data.length > 0){
                 var map = L.map('map').setView([data[0].latitude, data[0].longitude], 10);
                 for (let d of data) {
